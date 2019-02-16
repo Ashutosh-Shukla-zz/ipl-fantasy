@@ -1,0 +1,71 @@
+/** Green	#4b5354 #01113a
+			#5a6667
+ **************************************************************** **/
+	::selection {
+		background: #01113a;
+	}
+	::-moz-selection {
+		background: #01113a; /* Firefox */
+	}
+	::-webkit-selection {
+		background: #01113a; /* Safari */
+	}
+
+	#aside nav ul li a:active,
+	#aside nav ul li.menu-open,
+	#aside nav ul li.always-open,
+	#aside nav>ul>li>a:hover,
+	#aside nav>ul>li>a:focus,
+	#aside nav ul li.active,
+	.fancy-file-upload.fancy-file-primary>span.button,
+	.datepicker table tr td.active.active,
+	.btn-primary,
+	#header,
+
+	/*.toast-primary,*/
+	.popular .plan-title,
+	body.min #aside ul.nav>li>ul li,
+	body.min #aside ul.nav li.menu-open,
+	body.min #aside ul.nav>li:hover>ul,
+	#aside nav ul li a.dashboard,
+	#aside .logo,
+	body.min #asidesize,
+	#aside, #asidebg {
+		background-color: #01113a;
+		background:radial-gradient(circle at 30% 0%, #01113a, 10%, #061D42 80%);
+	}
+	
+	body.min #aside ul.nav>li:hover:before {
+		border-right-color: #5a6667;
+	}
+
+	.panel>.panel-heading strong {
+		color:#01113a;
+	}
+	
+	.btn-primary {
+		border-color:#01113a;
+	}
+
+	.popular {
+		border-color:#5a6667 !important;
+	}
+	
+	/**
+		IMPORTANT
+	**/
+	.btn-primary,
+	.alert-theme-color,
+	.panel-primary>.panel-heading {
+		background-color: #01113a !important;
+	}
+	.panel-primary,
+	.panel-primary>.panel-heading {
+		border-color: #01113a !important;
+	}
+	
+	@media only screen and (min-width: 768px) {
+		body.min #aside ul.nav>li:hover>a span {
+			background-color: #5a6667;
+		}
+	}

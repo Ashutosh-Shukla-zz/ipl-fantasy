@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+http://www.springframework.org/schema/mvc  
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd  
+http://www.springframework.org/schema/context  
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<context:component-scan base-package="com.ipl">
+	</context:component-scan>
+
+	<mvc:annotation-driven />
+	
+ 
+ 		<bean id="viewResolver"
+			class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+			<property name="viewClass">
+				<value>
+					org.springframework.web.servlet.view.tiles2.TilesView
+				</value>
+			</property>
+		</bean>
+	
+		<bean id="tiles-plugin"
+			class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+			<property name="definitions">
+			<list>
+				<value>/WEB-INF/config/ipl-tiles-def.xml</value>
+			</list>
+			</property>
+		</bean>
+
+		<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+
+	
+	<!-- Initialization for data source  -->
+
+<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/ipl" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+<!-- OFSS-->
+ 	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://ipl-mysql:3306/ipl" />
+		<property name="username" value="iplFantasy" />
+		<property name="password" value="!plFantasy" />
+	</bean>	
+	 -->
+	<!-- GCMS -->
+<!--  <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.10.51.2:3306/ipl" />
+		<property name="username" value="adminFdJsS15" />
+		<property name="password" value="ps14vxyFt3xV" />
+</bean> 
+ -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<mvc:resources mapping="/assets/**" location="/assets/"></mvc:resources>
+	
+	
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+		<property name="basename" value="messages" />
+</bean>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.india.com" />
+        <property name="port" value="465" />
+        <property name="protocol" value="smtps" />
+        <property name="username" value="iplfantasy@india.com" />
+        <property name="password" value="!plFantasy" />
+      
+        <property name="javaMailProperties">
+           <props>
+                  <prop key="mail.smtps.auth">true</prop>
+		            <prop key="mail.smtp.ssl.enable">true</prop>
+		            <prop key="mail.transport.protocol">smtps</prop>
+               </props>
+        </property>
+    </bean>
+
+
+</beans>

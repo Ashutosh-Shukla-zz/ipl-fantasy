@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name=".ipl.base.layout" template="/WEB-INF/jsp/layout/iplLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/header.jsp" />
+		<put-attribute name="navigation" value="/WEB-INF/jsp/layout/navigation.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />
+	</definition>
+	
+	<definition name=".ipl.register" template="/WEB-INF/jsp/registration.jsp">
+		<put-attribute name="title" value="Register" />
+	</definition>
+	
+	<definition name=".ipl.login" template="/WEB-INF/jsp/login.jsp">
+		<put-attribute name="title" value="" />
+	</definition>
+	
+
+	<definition name=".ipl.dashboard" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp" />
+	</definition>
+	
+	<definition name=".ipl.changePassword" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/change-password.jsp" />
+	</definition>
+	
+	<definition name=".ipl.fixtures" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/fixtures.jsp" />
+	</definition>
+	
+	<definition name=".ipl.standings" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/standings.jsp" />
+	</definition>
+	
+	<definition name=".ipl.history" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/history.jsp" />
+	</definition>
+	
+	<definition name=".ipl.matchDetails" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/match-details.jsp" />
+	</definition>
+	
+	
+	<definition name=".ipl.admin.home" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin-dashboard.jsp" />
+	</definition>
+	
+	<definition name=".ipl.error" template="/WEB-INF/jsp/error.jsp">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+	</definition>
+	
+	<definition name=".ipl.error404"  template="/WEB-INF/jsp/error404.jsp">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+	</definition>
+	
+	<definition name=".ipl.admin.approvals" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin-approvals.jsp" />
+	</definition>
+	
+	<definition name=".ipl.rules" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/rule.jsp" />
+	</definition>
+	
+		<definition name=".ipl.statistics" extends=".ipl.base.layout">
+		<put-attribute name="title" value="Ipl Fantasy 2018" />
+		<put-attribute name="body" value="/WEB-INF/jsp/statistics.jsp" />
+	</definition>
+	
+</tiles-definitions>
