@@ -4,4 +4,4 @@ RestApi end points for the android application implemented. Database scripts pre
 ### Technologies Used
 Java, Spring, Spring Mvc, Angular, Mysql.
 ### Tools
-Eclipse, Android sdk, MySql server, Tomacat, Postman
+Eclipse, Android sdk, MySql server, Tomacat
